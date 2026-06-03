@@ -37,7 +37,6 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 px-6 py-10">
-            {/* Hero Section */}
             <div className="text-center mb-12">
                 <h1 className="text-5xl font-bold text-gray-800 mb-4">
                     React Practice Assignment
@@ -48,20 +47,24 @@ const Home = () => {
                 </p>
             </div>
 
-            {/* Cards Section */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {features.map((feature) => (
-                    <Link key={feature.title} to={feature.route}>
-                        <Card className="h-full hover:shadow-lg transition duration-300 cursor-pointer">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                                {feature.title}
-                            </h2>
+                    <Card key={feature.title}>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                            {feature.title}
+                        </h2>
 
-                            <p className="text-gray-600">
-                                {feature.description}
-                            </p>
-                        </Card>
-                    </Link>
+                        <p className="text-gray-600 mb-4">
+                            {feature.description}
+                        </p>
+
+                        <Link
+                            to={feature.route}
+                            className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                        >
+                            Open →
+                        </Link>
+                    </Card>
                 ))}
             </div>
         </div>
