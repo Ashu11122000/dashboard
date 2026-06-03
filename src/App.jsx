@@ -1,12 +1,11 @@
-import Navbar from "./components/layout/Navbar";
+import Layout from "./components/layout/Layout";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <AppRoutes />
-    </>
+    </Layout>
   );
 }
 
