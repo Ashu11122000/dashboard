@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Card from "../../components/ui/Card";
+
 const Home = () => {
     const features = [
         {
@@ -35,7 +37,6 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 px-6 py-10">
-
             {/* Hero Section */}
             <div className="text-center mb-12">
                 <h1 className="text-5xl font-bold text-gray-800 mb-4">
@@ -50,12 +51,17 @@ const Home = () => {
             {/* Cards Section */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {features.map((feature) => (
-                    <Card
-                        key={feature.title}
-                        title={feature.title}
-                        description={feature.description}
-                        route={feature.route}
-                    />
+                    <Link key={feature.title} to={feature.route}>
+                        <Card className="h-full hover:shadow-lg transition duration-300 cursor-pointer">
+                            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                                {feature.title}
+                            </h2>
+
+                            <p className="text-gray-600">
+                                {feature.description}
+                            </p>
+                        </Card>
+                    </Link>
                 ))}
             </div>
         </div>
