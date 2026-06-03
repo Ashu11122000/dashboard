@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../../components/ui/Button";
 
 const Counter = () => {
     const [count, setCount] = useState(0);
@@ -18,7 +19,6 @@ const Counter = () => {
     return (
         <div className="min-h-screen bg-gray-100 flex justify-center items-center px-4">
             <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
-        
                 <h1 className="text-3xl font-bold text-center mb-8">
                     Counter Application
                 </h1>
@@ -29,32 +29,30 @@ const Counter = () => {
                     </p>
 
                     <div className="flex justify-center gap-4">
-            
-                    <button
-                        onClick={handleDecrement}
-                        className="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600 transition"
-                    >
-                        -1
-                    </button>
+                        <Button
+                            onClick={handleDecrement}
+                            className="bg-red-500 hover:bg-red-600"
+                        >
+                            -1
+                        </Button>
 
-                    <button
-                        onClick={handleReset}
-                        className="bg-gray-500 text-white px-5 py-2 rounded-lg hover:bg-gray-600 transition"
-                    >
-                        Reset
-                    </button>
+                        <Button
+                            onClick={handleReset}
+                            className="bg-gray-500 hover:bg-gray-600"
+                        >
+                            Reset
+                        </Button>
 
-                    <button
-                        onClick={handleIncrement}
-                        className="bg-green-500 text-white px-5 py-2 rounded-lg hover:bg-green-600 transition"
-                    >
-                        +1
-                    </button>
-
+                        <Button
+                            onClick={handleIncrement}
+                            className="bg-green-500 hover:bg-green-600"
+                        >
+                            +1
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     );
 };
 
