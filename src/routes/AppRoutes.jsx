@@ -6,7 +6,7 @@ import Form from "../pages/Form/Form";
 import Todo from "../pages/Todo/Todo";
 import Debounce from "../pages/Debounce/Debounce";
 import Calculator from "../pages/Calculator/Calculator";
-// import Weather from "../pages/Weather";
+import Weather from "../pages/Weather/Weather";
 
 const AppRoutes = () => {
     return (
@@ -17,7 +17,7 @@ const AppRoutes = () => {
             <Route path="/debounce" element={<Debounce />} />
             <Route path="/todo" element={<Todo />} />
             <Route path="/calculator" element={<Calculator />} />
-            {/*<Route path="/weather" element={<Weather />} /> */}
+            <Route path="/weather" element={<Weather />} />
         </Routes>
     );
 };
